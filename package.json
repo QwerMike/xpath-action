@@ -1,0 +1,25 @@
+{
+  "name": "xpath-action",
+  "version": "1.0.0",
+  "description": "XPath as GitHub Action",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/QwerMike/xpath-action.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/QwerMike/xpath-action/issues"
+  },
+  "homepage": "https://github.com/QwerMike/xpath-action#readme",
+  "dependencies": {
+    "@actions/core": "^1.2.3",
+    "xmldom": "^0.3.0",
+    "xpath": "0.0.27"
+  }
+}
