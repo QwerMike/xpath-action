@@ -1,8 +1,8 @@
 name: 'XPath Action'
-description: 'Execute XPath 1.0 expression on document'
+description: 'Execute XPath 1.0 expression on a given document'
 inputs:
   filename:
-    description: 'XML document'
+    description: 'The path to HTML or XML document'
     required: true
   expression:
     description: 'XPath 1.0 expression'
@@ -12,7 +12,7 @@ inputs:
     required: false
 outputs:
   result:
-    description: 'Evaluated nodes joined with newline'
+    description: 'Evaluated items joined with a newline'
 runs:
   using: 'node12'
   main: 'index.js'
