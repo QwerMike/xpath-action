@@ -21,4 +21,4 @@ jobs:
         expression: '//CD/YEAR/text()'
 
     - name: Get xpath result
-      run: echo "Result from xpath-action:\n${{ steps.xpath.outputs.result }}"
+      run: echo -e "Result from xpath-action:\n${{ steps.xpath.outputs.result }}"
