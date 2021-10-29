@@ -20,10 +20,18 @@ try {
     nodes.forEach((node) => {
         // If attribute, map values
         if (node.name) {
-            result[node.name] = node.value;
+            if (!result[node.ownerElement.tagName]) {
+                result[node.ownerElement.tagName] = {}
+            }
+            result[node.ownerElement.tagName][node.name] = node.value;
             return;
         }
-        result[node.tagName] = node.toString();
+        // If text node, map data
+        if (node.data) {
+            result[node.parentNode.tagName] = node.data
+            return
+        }
+        result[node.tagName] = node.toString()
     });
 
     core.setOutput("result", JSON.stringify(result));
