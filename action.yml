@@ -3,7 +3,10 @@ description: 'Execute XPath 1.0 expression on a given document'
 inputs:
   filename:
     description: 'The path to HTML or XML document'
-    required: true
+    required: false 
+  documentString: 
+    description: 'HTML or XML string. Used instead of filename'
+    required: false
   expression:
     description: 'XPath 1.0 expression'
     required: true
@@ -14,5 +17,5 @@ outputs:
   result:
     description: 'Evaluated items joined with a newline'
 runs:
-  using: 'node12'
+  using: 'node16'
   main: 'index.js'

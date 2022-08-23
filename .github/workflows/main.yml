@@ -2,9 +2,9 @@ name: Test the action
 
 on:
   push:
-    branches: [ master ]
+    branches: [ main ]    
   pull_request:
-    branches: [ master ]
+    branches: [ main ]
 
 jobs:
   test_action:
@@ -18,6 +18,27 @@ jobs:
       uses: ./
       with:
         filename: ./.github/workflows/cd_catalog.xml
+        expression: '//CD/YEAR/text()'
+
+    - name: Get xpath result
+      run: echo -e "Result from xpath-action:\n${{ steps.xpath.outputs.result }}"
+  test_action_string:
+    runs-on: ubuntu-latest
+    name: A job to test the action
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Read document file for string 
+      id: file
+      uses: juliangruber/read-file-action@v1
+      with:
+        path: ./.github/workflows/cd_catalog.xml
+
+    - name: Execute xpath-action
+      id: xpath
+      uses: ./
+      with:
+        documentString: ${{ steps.file.outputs.content }}
         expression: '//CD/YEAR/text()'
 
     - name: Get xpath result
