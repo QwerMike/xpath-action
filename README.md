@@ -5,7 +5,10 @@ This action executes XPath 1.0 expression on a given document. It uses [xmldom](
 ## Inputs
 
 ### `filename`
-**Required** The path to HTML or XML document.
+**Optional** The path to HTML or XML document. Used instead of `documentString` input.
+
+### `documentString`
+**Optional** String for HTML or XML document. Used instead of `filename` input.
 
 ### `expression`
 **Required** XPath 1.0 expression.
